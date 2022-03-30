@@ -1,0 +1,7 @@
+/* header css, round corners, wrap header around text and set padding  */
+.header {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #A9B7C0;
+    padding: 20px 10px;
+  }
