@@ -1,0 +1,43 @@
+.news-container {
+    margin-left: 160px;
+    height: 100%;
+    background-color: #282F44;
+    overflow: auto;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #191D32;
+    overflow-x: hidden;
+    padding-top: 20px;
+    
+    margin-top: 40px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  h3 {
+      color: #38AECC;
+      cursor: pointer;
+  }
+
+  hr {
+    background-color: #6FD08C;
+    height: 1px;
+    border: none;
+  }

@@ -1,3 +1,4 @@
+import News from "./pages/news"
 import './App.css'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
       <div class="header">
 
       </div>
+      <News></News>
     </div>
   );
 }
