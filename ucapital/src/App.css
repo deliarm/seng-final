@@ -1,7 +1,14 @@
 /* header css, round corners, wrap header around text and set padding  */
 .header {
-    border-radius: 10px;
     overflow: hidden;
-    background-color: #A9B7C0;
+    background-color: #191D32;
     padding: 20px 10px;
+    
+    text-align: right;
+    
+  }
+
+  .linkStyle {
+    color: #38AECC;
+    text-decoration: none;
   }

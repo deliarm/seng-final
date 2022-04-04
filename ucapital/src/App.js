@@ -30,7 +30,7 @@ function Header() {
         {/* <Link to="/news">News</Link> */}
         {/* <Link to='news'></Link> */}
         <nav>
-          <Link to='news'>News</Link>
+          <Link to='news' className="linkStyle">News</Link>
         </nav>
       </div>
       <Outlet />
