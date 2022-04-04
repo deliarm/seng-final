@@ -1,0 +1,27 @@
+#stockContainer{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    max-width: 580px;
+    border: 2px solid #6FD08C;
+    border-radius: 8px;
+    background-color: #282F44;
+    color: #fff;
+}
+
+#textContainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}  
+
+.price{
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    color: white;
+    margin: auto;
+}
