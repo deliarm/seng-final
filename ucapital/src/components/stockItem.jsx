@@ -1,10 +1,9 @@
 import React from 'react';
 import './stockitem.css'
 import Plot from 'react-plotly.js';
-
+// var yfinance = require('yfinance');
 
 class StockItem extends React.Component{
-  // stock = this.props.stockName;
   constructor(props){
     super(props);
     this.state = {
@@ -12,16 +11,19 @@ class StockItem extends React.Component{
       stockYValues: [],
     }
   }
-
+  
   componentDidMount(){
     this.fetchStock();
   }
 
+  // testyFin(){
+  //   yfinance.getQuotes("MSFT",function(err,data))
+  // }
+  
   fetchStock(){
     const pointer = this;
-    const KEY = 'E4D6J86X93CQC0AN';
-    var stock = 'MSFT';
-    // var curr_price = 0;
+    var KEY =  "LVZ92LVAH6B2DYGH";
+    var stock = this.props.stockName;
     var API_call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stock}&interval=5min&outputsize=full&apikey=${KEY}`;
     let stockXValuesFunction = [];
     let stockYValuesFunction = [];
@@ -49,7 +51,6 @@ class StockItem extends React.Component{
       )
   }
 
-
   render(){
     return(
       <div id="stockContainer">
@@ -57,14 +58,15 @@ class StockItem extends React.Component{
           <h1>{this.state.stockSymbol}</h1>
           <h1 className="price">${parseFloat(this.state.curr_price).toFixed(2)}</h1>
         </div>
-        <Plot
+
+        <Plot id={this.state.StockSymbol}
         data={[
           {
             x: this.state.stockXValues,
             y: this.state.stockYValues,
             type: 'scatter',
             mode: 'lines',
-            marker: {color: '#6FD08C'},
+            marker: {color: '#00fa9a'}, // 6FD08C
             hoverinfo: "x+y",
             fill:'tozeroy',
             opacity: ".1",
@@ -72,28 +74,35 @@ class StockItem extends React.Component{
         ]}
         layout={ { 
           // title: this.state.stockSymbol,
-          plot_bgcolor: "#282F44",
-          paper_bgcolor: "#282F44",
-          autosize : true,
+          useResizeHandler : true,
+          autosize: true,
+          plot_bgcolor: "hsl(216, 50%, 16%)",
+          paper_bgcolor: "hsl(216, 50%, 16%)",
           font: {
             color: "#fff",
-            },
+          },
           margin:{
-            autoexpand: true,
+            // autoexpand: true,
             b : 40,
             t : 10,
             l : 40,
             r : 10,
-            }
-          } 
+          }
+        } 
         }
         config={{
-          // responsive : true
+        //responsive : true // causes improper first load -> need resolution
         }}
-      />
+        style={{
+          width:"100%",
+          height:"100%",
+        }}
+        />
+
       </div>
     )
   }
+
 }
 
 export default StockItem;
