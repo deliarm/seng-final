@@ -1,4 +1,5 @@
-import News from "./pages/news"
+import News from "./pages/news";
+import Stock from "./pages/stock";
 import StockItem from "./components/stockItem";
 import Login from './pages/loginpage'
 import Signup from './pages/signuppage'
@@ -25,19 +26,20 @@ function App() {
   else{
   return (
     <div className="App">
-
-      <BrowserRouter>
+      {/* <StockItem stockName="AAPL"></StockItem> */}
+      <Stock></Stock>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/"  element={<Header />}>
             <Route path="news" element={<News />} />
-          </Route>
-        </Routes>
+          </Route> */}
+        {/* </Routes> */}
         {/* <div class="header">
 
         </div>
         <News></News> */}
 
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
 
     </div >
   );

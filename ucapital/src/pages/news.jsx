@@ -31,7 +31,7 @@ function News(props) {
     console.log(news.stories)
     var newsList;
     const tagList = [];
-    if (news.stories != undefined) {
+    if (news.stories !== undefined) {
         newsList = news.stories.map((item) => {
             // for (let i = 0; i < item.tags.length; i++) {
             //     if (!tagList.includes(item.tags[i])) {
