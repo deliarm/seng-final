@@ -5,7 +5,7 @@ import Login from './pages/loginpage'
 import Signup from './pages/signuppage'
 import Home from './pages/home'
 import './App.css'
-import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link, Outlet, useNavigate } from "react-router-dom";
 import {useState} from 'react'
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
       {/* <Stock></Stock> */}
       <BrowserRouter>
         <Routes>
-          <Route path="/"  element={<Header />}>
+          <Route path="/"  element={<Header setLoginUser={setLoginUser}/>}>
           <Route path="news" element={<News />} />
           <Route path="home" element={<Home />} />
           </Route>
@@ -50,7 +50,8 @@ function App() {
       }
 }
 
-function Header() {
+function Header({setLoginUser}) {
+  const navigate = useNavigate()
   return (
     <div>
       <div className="header">
@@ -59,6 +60,7 @@ function Header() {
         <nav>
           <Link to='news' className="linkStyle">News</Link>
           <Link to='home' className="linkStyle">Home</Link>
+          <button className="logout-style" onClick={() => {setLoginUser({}); navigate("/")}}>Logout</button>
         </nav>
       </div>
       <Outlet />
