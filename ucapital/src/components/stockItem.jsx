@@ -9,20 +9,18 @@ class StockItem extends React.Component{
     this.state = {
       stockXValues: [],
       stockYValues: [],
+      active : false,
     }
+    this.toggle = this.toggle.bind(this);
   }
   
   componentDidMount(){
     this.fetchStock();
   }
-
-  // testyFin(){
-  //   yfinance.getQuotes("MSFT",function(err,data))
-  // }
   
   fetchStock(){
     const pointer = this;
-    var KEY =  "LVZ92LVAH6B2DYGH";
+    var KEY =  "5A8Z4LIZ2FPZ4RCF";
     var stock = this.props.stockName;
     var API_call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stock}&interval=5min&outputsize=full&apikey=${KEY}`;
     let stockXValuesFunction = [];
@@ -36,7 +34,7 @@ class StockItem extends React.Component{
       )
       .then(
         function(data){
-          console.log(data);
+          // console.log(data);
           for (var key in data['Time Series (Daily)']){
             stockXValuesFunction.push(key); // date
             stockYValuesFunction.push(data['Time Series (Daily)'][key]['1. open']); // price
@@ -51,9 +49,24 @@ class StockItem extends React.Component{
       )
   }
 
+  toggle(){
+    if(this.state.active === false){
+      this.setState({
+        active : true
+      });
+      console.log('set')
+    }
+    else{
+      this.setState({
+        active : false
+      });
+      console.log('unset')
+    }
+  }
+
   render(){
     return(
-      <div id="stockContainer">
+      <div id="stockContainer" className={'stockContainer' + (this.state.active ? "--active" : "")} onDoubleClick={this.toggle}>
         <div id="textContainer">
           <h1>{this.state.stockSymbol}</h1>
           <h1 className="price">${parseFloat(this.state.curr_price).toFixed(2)}</h1>
@@ -74,6 +87,8 @@ class StockItem extends React.Component{
         ]}
         layout={ { 
           // title: this.state.stockSymbol,
+          // width: 480,
+          height: '100%',
           useResizeHandler : true,
           autosize: true,
           plot_bgcolor: "hsl(216, 50%, 16%)",

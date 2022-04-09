@@ -1,0 +1,32 @@
+:root {
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+    --cyan: hsl(178, 100%, 50%);
+    --soft-blue: hsl(215, 51%, 70%);
+    --stock-green: #00fa9a;
+    --text-blue : #38AECC;
+}
+
+body{
+    background-color:  var(--main-bg);
+}
+
+#title{
+    font-size: 64px;
+    font-family: "Arial", sans-serif;
+    color: var(--text-blue);
+    text-align: center
+}
+#mainContent{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+} 
+
+#item{
+    /* margin: 0 5px; */
+    padding: 10px 10px 10px 10px;
+}

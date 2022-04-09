@@ -8,26 +8,26 @@ import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";
 import {useState} from 'react'
 
 function App() {
-  const [user, setLoginUser] =useState({})
-  const bool = true
-  if(!(user && user._id)){
-    return(
-      <div className="App">
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Login setLoginUser={setLoginUser}/>} />
-            <Route path='/signup' element={<Signup />} />
-          </Routes>
-        </BrowserRouter>
-
-      </div>
-    )
-  }
-  else{
+  // const [user, setLoginUser] =useState({})
+  // const bool = true
+  // if(!(user && user._id)){
+    // return(
+      // <div className="App">
+        {/* <BrowserRouter> */}
+          {/* <Routes> */}
+            {/* <Route path='/' element={<Login setLoginUser={setLoginUser}/>} /> */}
+            {/* <Route path='/signup' element={<Signup />} /> */}
+          {/* </Routes> */}
+        {/* </BrowserRouter> */}
+{/*  */}
+      {/* </div> */}
+    // )
+  // }
+  // else{
   return (
     <div className="App">
-      {/* <StockItem stockName="AAPL"></StockItem> */}
       <Stock></Stock>
+      {/* <News></News> */}
       {/* <BrowserRouter>
         <Routes>
           <Route path="/"  element={<Header />}>
@@ -43,7 +43,7 @@ function App() {
 
     </div >
   );
-      }
+      
 }
 
 function Header() {
