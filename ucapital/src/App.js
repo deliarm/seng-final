@@ -3,6 +3,7 @@ import Stock from "./pages/stock";
 import StockItem from "./components/stockItem";
 import Login from './pages/loginpage'
 import Signup from './pages/signuppage'
+import Home from './pages/home'
 import './App.css'
 import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";
 import {useState} from 'react'
@@ -10,6 +11,8 @@ import {useState} from 'react'
 function App() {
   const [user, setLoginUser] =useState({})
   const bool = true
+  const news = false
+  const home = true
   if(!(user && user._id)){
     return(
       <div className="App">
@@ -27,19 +30,20 @@ function App() {
   return (
     <div className="App">
       {/* <StockItem stockName="AAPL"></StockItem> */}
-      <Stock></Stock>
-      {/* <BrowserRouter>
+      {/* <Stock></Stock> */}
+      <BrowserRouter>
         <Routes>
           <Route path="/"  element={<Header />}>
-            <Route path="news" element={<News />} />
-          </Route> */}
-        {/* </Routes> */}
-        {/* <div class="header">
+          <Route path="news" element={<News />} />
+          <Route path="home" element={<Home />} />
+          </Route>
+        </Routes>
+        <div class="header">
 
         </div>
-        <News></News> */}
+        <Home></Home>
 
-      {/* </BrowserRouter> */}
+      </BrowserRouter>
 
     </div >
   );
@@ -54,6 +58,7 @@ function Header() {
         {/* <Link to='news'></Link> */}
         <nav>
           <Link to='news' className="linkStyle">News</Link>
+          <Link to='home' className="linkStyle">Home</Link>
         </nav>
       </div>
       <Outlet />
