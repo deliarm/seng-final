@@ -1,43 +1,48 @@
+/* news container containing all nes items */
 .news-container {
-    margin-left: 160px;
-    height: 100%;
-    background-color: #282F44;
-    overflow: auto;
+  margin-left: 160px;
+  height: 100%;
+  background-color: #282F44;
+  overflow: auto;
 }
 
+/* side navigation bar */
 .sidenav {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #191D32;
-    overflow-x: hidden;
-    padding-top: 20px;
-    
-    margin-top: 60px;
-  }
-  
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #191D32;
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-top: 60px;
+}
 
-  h3 {
-      color: #38AECC;
-      cursor: pointer;
-  }
+/* items in navigation bar */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
 
-  hr {
-    background-color: #6FD08C;
-    height: 1px;
-    border: none;
-  }
+/* hover links */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* styling for titles */
+h3 {
+  color: #38AECC;
+  cursor: pointer;
+}
+
+/* styling for lines */
+hr {
+  background-color: #6FD08C;
+  height: 1px;
+  border: none;
+}
