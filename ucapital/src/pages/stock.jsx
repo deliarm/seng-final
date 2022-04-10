@@ -8,7 +8,7 @@ const stock = () => {
         array.sort(() => Math.random() - 0.5);
     }
     const stock_array = JSON.parse(globalStocks.JsonStocks);
-    const new_array = (stock_array.sort((a, b) => 0.5 - Math.random())).slice(0, 5);
+    const new_array = (stock_array.sort((a, b) => 0.5 - Math.random())).slice(0, 30);
 
     return (
         <div id="pageContainer">

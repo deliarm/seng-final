@@ -3,6 +3,7 @@ import Stock from "./pages/stock";
 import StockItem from "./components/stockItem";
 import Login from './pages/loginpage'
 import Signup from './pages/signuppage'
+import Crypto from './pages/crypto'
 import './App.css'
 import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";
 import {useState} from 'react'
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className="App">
       <Stock></Stock>
+      {/* <Crypto> </Crypto> */}
       {/* <News></News> */}
       {/* <BrowserRouter>
         <Routes>
