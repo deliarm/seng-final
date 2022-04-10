@@ -87,9 +87,7 @@ class StockItem extends React.Component {
           ]}
           layout={{
             // title: this.state.stockSymbol,
-            // width: 480,
-            // height: '100%',
-            // useResizeHandler: true,
+            useResizeHandler: true,
             autosize: true,
             plot_bgcolor: "hsl(216, 50%, 16%)",
             paper_bgcolor: "hsl(216, 50%, 16%)",
@@ -106,11 +104,11 @@ class StockItem extends React.Component {
           }
           }
           config={{
-            //responsive : true // causes improper first load -> need resolution
+            responsive : true // causes improper first load -> need resolution
           }}
           style={{
             width: "100% !important",
-            height: "800px",
+            height: "700px",
           }}
         />
 
