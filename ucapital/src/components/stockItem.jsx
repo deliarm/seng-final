@@ -49,8 +49,11 @@ class StockItem extends React.Component {
       )
   }
 
-  AddCookie(){
-    console.log("in stock component "+this.props.cookieTracker.get("stocks"));
+  AddCookie = () => {
+    var toBeAdded = this.props.stockName;
+    var currentCookie = document.cookie;
+    console.log(currentCookie)
+    document.cookie = currentCookie+","+toBeAdded;
   }
 
   toggle() {
@@ -58,13 +61,11 @@ class StockItem extends React.Component {
       this.setState({
         active: true
       });
-      console.log('set')
     }
     else {
       this.setState({
         active: false
       });
-      console.log('unset')
     }
   }
 

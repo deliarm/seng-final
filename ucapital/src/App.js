@@ -1,8 +1,8 @@
 import News from "./pages/news";
-import Stock from "./pages/stock";
 import StockItem from "./components/stockItem";
 import Login from './pages/loginpage'
 import Signup from './pages/signuppage'
+import Stock from "./pages/stock";
 import Crypto from './pages/crypto'
 import Cookies from 'universal-cookie';
 import './App.css'
@@ -29,13 +29,13 @@ function App() {
   else {
     return (
       <div className="App">
-        {/* <StockItem stockName="AAPL"></StockItem> */}
-        {/* <Stock></Stock> */}
         <BrowserRouter>
         <Routes>
           <Route path="/"  element={<Header />}>
           <Route path="home" element={<Home user = {user} />} />
           <Route path="news" element={<News />} />
+          <Route path="stock" element={<Stock />} />
+          <Route path="crypto" element={<Crypto />} />
           </Route>
         </Routes>
         {/* <div class="header">
@@ -60,6 +60,8 @@ function Header() {
         <nav>
           <Link to='news' className="linkStyle">News</Link>
           <Link to='home' className="linkStyle">Home</Link>
+          <Link to='stock' className="linkStyle">Stocks</Link>
+          <Link to='crypto' className="linkStyle">Crypto</Link>
         </nav>
       </div>
       <Outlet />
