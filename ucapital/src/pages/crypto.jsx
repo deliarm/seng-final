@@ -1,31 +1,30 @@
-import React , {useState} from "react";
-import StockItem from "../components/stockItem";
-import './stock.css'
-import globalStocks from "../components/globalStocks";
-import Cookies from 'universal-cookie';
-const stock_array = JSON.parse(globalStocks.JsonStocks);
-const new_array = (stock_array).slice(0, 26);
+import React, {useState} from 'react';
+import CryptoItem from "../components/cryptoItem";
+import './crypto.css'
+import globalCrypto from "../components/globalCrypto";
+const crypto_array = JSON.parse(globalCrypto.JsonCrypto);
+const new_array = crypto_array.slice(0, 25);
 
-const Stock = (props) => {
+const Crypto = () => {
     const [list,setList] = useState(new_array);
     const [count,setCount] = useState(26);
-    console.log("from stock page " + props.cookieTracker.get("stocks"));
+
     function Search(){
         var searched = document.getElementById("search").value.toUpperCase();
         if(searched === ""){
-            setList(stock_array.slice(0,count));
+            setList(crypto_array.slice(0,count));
             checkSort();
         }
         if(searched){
             setList([])
-            stock_array.forEach(element => {
+            crypto_array.forEach(element => {
                 if(element.includes(searched)){
                     setList(prevList => [...prevList, element])
                 }
             });
             document.getElementById("search").value="";
             document.getElementById("dropDown").selectedIndex = 0;
-        }        
+        }
     }
 
     function checkSort(){
@@ -41,15 +40,15 @@ const Stock = (props) => {
         }
     }
 
-    function loadStocks(){
-        var addon = stock_array.slice(count,count+12);
+    function loadCrypto(){
+        var addon = crypto_array.slice(count,count+12);
         setList(prevList => [...prevList,...addon]);
         setCount(count+12);
     }
 
     return (
         <div id="pageContainer">
-            <h1 id="title"> Today's Stocks </h1>
+            <h1 id="title"> Trending Crypto </h1>
             <div id="menu">
                 <select id="dropDown">
                     <option value="alphabetical" >Alphabetical A-Z</option>
@@ -60,12 +59,12 @@ const Stock = (props) => {
             </div>
             <ul id="mainContent">
                 {list.map(function (s) {
-                    return <li id="item" key={s}><StockItem cookieTracker={props.cookieTracker} stockName={s}></StockItem></li>;
+                    return <li id="item" key={s}><CryptoItem cryptoName={s}></CryptoItem></li>;
                 })}
             </ul>
-            <button id="loadMore" onClick={loadStocks}> load more Stocks</button>
+            <button id="loadMore" onClick={loadCrypto}> Load more CryptoCurrencies</button>
         </div>
     )
 }
 
-export default Stock
+export default Crypto
