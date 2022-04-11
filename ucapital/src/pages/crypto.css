@@ -1,0 +1,10 @@
+#menu{
+    border: 2px solid red;
+    text-align: end;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+#menu > *{
+    margin-right: 10px;
+}

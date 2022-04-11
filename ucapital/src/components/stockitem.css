@@ -30,20 +30,20 @@
 }
 
 .stockContainer--active {
-    background-color: #191D32;
+    background-color: var(--card-bg);
     color: #38AECC;
-    position: absolute;
+    position: fixed;
     top: 10%;
     left: 8%;
     width: 80% !important;
     z-index: 1 !important;
-    height: 80%;
+    height: 70%;
     margin: 30px;
     float: left;
     overflow-y: none;
     border-radius: 20px;
     border-style: solid;
-    border-color: #6FD08C;
+    border-color: var(--stock-green);
     font-size: 28px ;
 }
 
