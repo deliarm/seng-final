@@ -42,7 +42,7 @@ function App() {
           <Route path="news" element={<News />} />
 
         </div> */}
-        <Home></Home>
+        {/* <Home></Home> */}
 
         </BrowserRouter>
 
