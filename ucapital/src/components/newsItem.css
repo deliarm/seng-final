@@ -1,7 +1,9 @@
+/* dynamic width, set style for closed news item */
 .item {
     background-color: #191D32;
     height: 300px;
-    width: calc((100%-160px)/3 - 65px);
+    width: calc((100%-160px)/3 - 100px);
+    min-width: 300px;
     margin: 30px;
     float: left;
     color: #38AECC;
@@ -9,15 +11,17 @@
     border-style: solid;
     border-color: #6FD08C;
     cursor: pointer;
+    overflow: hidden;
 }
 
+/* set style for opened news item */
 .item--active {
     background-color: #191D32;
     color: #38AECC;
     position: fixed;
     width: 80% !important;
     height: 80%;
-    margin: 30px;  
+    margin: 30px;
     float: left;
     overflow-y: auto;
     border-radius: 20px;
@@ -25,6 +29,7 @@
     border-color: #6FD08C;
 }
 
+/* toggle paragraph visibility */
 .paragraph {
     visibility: hidden;
 }
@@ -33,19 +38,23 @@
     visibility: visible;
 }
 
+/* put image in center */
 .image-container {
     display: flex;
     justify-content: center;
 }
 
+/* title */
 .title {
     padding-left: 10px;
 }
 
+/* paragraph */
 p {
     padding: 0px 20px;
 }
 
+/* toggle date visibility */
 .date {
     visibility: hidden;
 }
@@ -55,6 +64,7 @@ p {
     padding: 0px 20px;
 }
 
+/* toggle close button visibility */
 .close {
     visibility: hidden;
 }

@@ -5,40 +5,33 @@ import './news.css'
 
 // API from https://github.com/hczhu/TickerTick-API
 
-
-function News(props) {
+function News() {
+    // store news from api
     const [news, setNews] = useState([])
-    const [selectedTags, setSelectedTags] = useState([])
+    // tickers for query to api
     const [tickers, setTickers] = useState("")
-    function pushTag(tag) {
-        const tempArray = [];
-        tempArray.push(tag)
-        setSelectedTags(tempArray)
-    }
+
+    // request if tickers changes
     useEffect(() => {
         axios.get(`https://api.tickertick.com/feed`, {
+            // get 100 news articles with tickers
             params: {
                 n: 100,
                 q: tickers
             }
         })
             .then(res => {
+                // set news articles
                 const stockNews = res.data;
                 setNews(stockNews)
             })
 
     }, [tickers])
-    console.log(news.stories)
+
     var newsList;
-    const tagList = [];
+    // create a news item for each of the items news
     if (news.stories !== undefined) {
         newsList = news.stories.map((item) => {
-            // for (let i = 0; i < item.tags.length; i++) {
-            //     if (!tagList.includes(item.tags[i])) {
-            //         tagList.push(item.tags[i])
-            //     }
-            // }
-            tagList.sort();
             return (<NewsItem
                 title={item.title}
                 image={item.favicon_url}
@@ -48,17 +41,8 @@ function News(props) {
         })
     }
 
-    // const sidebarOptions = tagList.map((tag) => {
-    //     return (
-    //         <h3 onClick={() => pushTag(tag)}>{tag}</h3>
-    //     )
-    // })
-
-    // console.log(tagList)
-    // console.log(news)
-    console.log(selectedTags)
-
     return (
+        // options to set ticker for query to API
         <div>
             <div class="sidenav">
                 <h3 onClick={() => setTickers("")}>All</h3>
@@ -79,7 +63,6 @@ function News(props) {
         </div>
 
     )
-
 }
 
 export default News
