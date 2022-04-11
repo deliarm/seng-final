@@ -4,11 +4,15 @@ import StockItem from "./components/stockItem";
 import Login from './pages/loginpage'
 import Signup from './pages/signuppage'
 import Crypto from './pages/crypto'
+import Cookies from 'universal-cookie';
 import './App.css'
 import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";
 import {useState} from 'react'
 
 function App() {
+  const cookies = new Cookies();
+  cookies.set('stocks', 'empty', {path:'/'});
+  console.log(cookies.get('testCookie'));
   // const [user, setLoginUser] =useState({})
   // const bool = true
   // if(!(user && user._id)){
@@ -27,7 +31,7 @@ function App() {
   // else{
   return (
     <div className="App">
-      <Stock></Stock>
+      <Stock cookieTracker={cookies}></Stock>
       {/* <Crypto> </Crypto> */}
       {/* <News></News> */}
       {/* <BrowserRouter>

@@ -57,10 +57,19 @@
     display: flex;
     flex-direction: row;
     padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0px;
     margin-bottom: 0px;
     padding-bottom: 0px;
     background: linear-gradient(#101f37 ,var(--card-bg));
     border-radius: 8px;
+}
+
+#addToFav{
+    width: 120px;
+    position: relative;
+    top: 25px;
+    left: 2%;
 }
 
 .price {

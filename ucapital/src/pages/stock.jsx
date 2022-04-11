@@ -2,13 +2,14 @@ import React , {useState} from "react";
 import StockItem from "../components/stockItem";
 import './stock.css'
 import globalStocks from "../components/globalStocks";
+import Cookies from 'universal-cookie';
 const stock_array = JSON.parse(globalStocks.JsonStocks);
 const new_array = (stock_array).slice(0, 26);
 
-const Stock = () => {
+const Stock = (props) => {
     const [list,setList] = useState(new_array);
     const [count,setCount] = useState(26);
- 
+    console.log("from stock page " + props.cookieTracker.get("stocks"));
     function Search(){
         var searched = document.getElementById("search").value.toUpperCase();
         if(searched === ""){
@@ -59,7 +60,7 @@ const Stock = () => {
             </div>
             <ul id="mainContent">
                 {list.map(function (s) {
-                    return <li id="item" key={s}><StockItem stockName={s}></StockItem></li>;
+                    return <li id="item" key={s}><StockItem cookieTracker={props.cookieTracker} stockName={s}></StockItem></li>;
                 })}
             </ul>
             <button id="loadMore" onClick={loadStocks}> load more Stocks</button>

@@ -49,6 +49,10 @@ class StockItem extends React.Component {
       )
   }
 
+  AddCookie(){
+    console.log("in stock component "+this.props.cookieTracker.get("stocks"));
+  }
+
   toggle() {
     if (this.state.active === false) {
       this.setState({
@@ -68,7 +72,8 @@ class StockItem extends React.Component {
     return (
       <div id="stockContainer" className={'stockContainer' + (this.state.active ? "--active" : "")} onDoubleClick={this.toggle}>
         <div id="textContainer">
-          <h1>{this.state.stockSymbol}</h1>
+          <h1 id="ticker">{this.state.stockSymbol}</h1>
+          <button id="addToFav" onClick={this.AddCookie}> Add stock </button>
           <h1 className="price">${parseFloat(this.state.curr_price).toFixed(2)}</h1>
         </div>
 
