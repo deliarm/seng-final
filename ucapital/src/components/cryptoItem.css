@@ -61,6 +61,15 @@
     padding-bottom: 0px;
 }
 
+
+#addToFav{
+    width: 120px;
+    position: relative;
+    top: 25px;
+    left: 2%;
+}
+
+
 .price {
     position: absolute;
     top: 18px;

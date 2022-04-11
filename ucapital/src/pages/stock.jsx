@@ -9,7 +9,6 @@ const new_array = (stock_array).slice(0, 26);
 const Stock = (props) => {
     const [list,setList] = useState(new_array);
     const [count,setCount] = useState(26);
-    console.log("from stock page " + props.cookieTracker.get("stocks"));
     function Search(){
         var searched = document.getElementById("search").value.toUpperCase();
         if(searched === ""){
@@ -60,7 +59,7 @@ const Stock = (props) => {
             </div>
             <ul id="mainContent">
                 {list.map(function (s) {
-                    return <li id="item" key={s}><StockItem cookieTracker={props.cookieTracker} stockName={s}></StockItem></li>;
+                    return <li id="item" key={s}><StockItem stockName={s}></StockItem></li>;
                 })}
             </ul>
             <button id="loadMore" onClick={loadStocks}> load more Stocks</button>

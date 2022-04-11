@@ -49,18 +49,23 @@ class CryptoItem extends React.Component {
       )
   }
 
+  AddCookie = () => {
+    var toBeAdded = this.props.cryptoName;
+    var currentCookie = document.cookie;
+    console.log(currentCookie)
+    document.cookie = currentCookie+","+toBeAdded;
+  }
+
   toggle() {
     if (this.state.active === false) {
       this.setState({
         active: true
       });
-      console.log('set')
     }
     else {
       this.setState({
         active: false
       });
-      console.log('unset')
     }
   }
 
@@ -69,6 +74,7 @@ class CryptoItem extends React.Component {
       <div id="cryptoContainer" className={'cryptoContainer' + (this.state.active ? "--active" : "")} onDoubleClick={this.toggle}>
         <div id="textContainer">
           <h1>{this.state.cryptoSymbol}</h1>
+          <button id="addToFav" onClick={this.AddCookie}> Add Crypto </button>
           <h1 className="price">${parseFloat(this.state.curr_price).toFixed(2)}</h1>
         </div>
 
