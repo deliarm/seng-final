@@ -62,7 +62,7 @@ const Stock = () => {
                     return <li id="item" key={s}><StockItem stockName={s}></StockItem></li>;
                 })}
             </ul>
-            <button onClick={loadStocks}> load more Stocks</button>
+            <button id="loadMore" onClick={loadStocks}> load more Stocks</button>
         </div>
     )
 }

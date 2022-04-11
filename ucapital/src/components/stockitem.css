@@ -59,6 +59,8 @@
     padding-left: 10px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    background: linear-gradient(#101f37 ,var(--card-bg));
+    border-radius: 8px;
 }
 
 .price {

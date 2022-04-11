@@ -48,7 +48,7 @@ const Crypto = () => {
 
     return (
         <div id="pageContainer">
-            <h1 id="title"> Trending Cryptocurrencies </h1>
+            <h1 id="title"> Trending Crypto </h1>
             <div id="menu">
                 <select id="dropDown">
                     <option value="alphabetical" >Alphabetical A-Z</option>
@@ -62,7 +62,7 @@ const Crypto = () => {
                     return <li id="item" key={s}><CryptoItem cryptoName={s}></CryptoItem></li>;
                 })}
             </ul>
-            <button onClick={loadCrypto}> load more CryptoCurrencies</button>
+            <button id="loadMore" onClick={loadCrypto}> Load more CryptoCurrencies</button>
         </div>
     )
 }
