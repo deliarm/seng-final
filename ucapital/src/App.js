@@ -3,6 +3,8 @@ import Stock from "./pages/stock";
 import StockItem from "./components/stockItem";
 import Login from './pages/loginpage'
 import Signup from './pages/signuppage'
+import Crypto from './pages/crypto'
+import Cookies from 'universal-cookie';
 import './App.css'
 import Home from '../src/pages/home'
 import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";

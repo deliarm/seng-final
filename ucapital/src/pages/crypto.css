@@ -6,32 +6,25 @@
     --cyan: hsl(178, 100%, 50%);
     --soft-blue: hsl(215, 51%, 70%);
     --stock-green: #00fa9a;
-    --text-blue : #38AECC;
+    --text-blue: #38AECC;
 }
 
-body{
-    background-color:  var(--main-bg);
+#menu{
+    text-align: end;
+    margin-right: 10px;
+    padding-right: 10px;
+    display: block;
+    
 }
 
-#title{
-    font-size: 64px;
-    font-family: "Arial", sans-serif;
-    color: var(--text-blue);
-    text-align: center
+#menu > *{
+    margin-right: 10px;
 }
+
 #mainContent{
-    list-style: none;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
-} 
-
-#item{
-    /* margin: 0 5px; */
-    padding: 10px 10px 10px 10px;
 }
-
 
 select{
     background-color: var(--card-bg);
