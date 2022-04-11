@@ -32,17 +32,18 @@ function App() {
         <BrowserRouter>
         <Routes>
           <Route path="/"  element={<Header />}>
+          <Route path="/" element={<Home user = {user} />} />
           <Route path="home" element={<Home user = {user} />} />
           <Route path="news" element={<News />} />
           <Route path="stock" element={<Stock />} />
           <Route path="crypto" element={<Crypto />} />
           </Route>
+          
         </Routes>
         {/* <div class="header">
           <Route path="news" element={<News />} />
 
         </div> */}
-        {/* <Home></Home> */}
 
         </BrowserRouter>
 
