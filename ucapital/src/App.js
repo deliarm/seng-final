@@ -4,6 +4,7 @@ import StockItem from "./components/stockItem";
 import Login from './pages/loginpage'
 import Signup from './pages/signuppage'
 import './App.css'
+import Home from '../src/pages/home'
 import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";
 import { useState } from 'react'
 
@@ -27,19 +28,21 @@ function App() {
     return (
       <div className="App">
         {/* <StockItem stockName="AAPL"></StockItem> */}
-        <Stock></Stock>
-        {/* <BrowserRouter>
+        {/* <Stock></Stock> */}
+        <BrowserRouter>
         <Routes>
           <Route path="/"  element={<Header />}>
-            <Route path="news" element={<News />} />
-          </Route> */}
-        {/* </Routes> */}
+          <Route path="home" element={<Home user = {user} />} />
+          <Route path="news" element={<News />} />
+          </Route>
+        </Routes>
         {/* <div class="header">
+          <Route path="news" element={<News />} />
 
-        </div>
-        <News></News> */}
+        </div> */}
+        <Home></Home>
 
-        {/* </BrowserRouter> */}
+        </BrowserRouter>
 
       </div >
     );
@@ -54,6 +57,7 @@ function Header() {
         {/* <Link to='news'></Link> */}
         <nav>
           <Link to='news' className="linkStyle">News</Link>
+          <Link to='home' className="linkStyle">Home</Link>
         </nav>
       </div>
       <Outlet />
