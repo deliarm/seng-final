@@ -2,10 +2,10 @@ import ChatAppClient from "../components/chatApp/client/src/App"
 
 import React from 'react'
 
-function home() {
+function home({user}) {
   return (
     <div className="homepage">
-      <ChatAppClient />
+      <ChatAppClient user = {user}/>
     </div>
   )
 }
