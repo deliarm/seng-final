@@ -1,17 +1,18 @@
 /* header css, round corners, wrap header around text and set padding  */
 .header {
     overflow: hidden;
-    background-color: #191D32;
+    background-color:hsl(216, 50%, 16%);
     padding: 20px 10px;
-    
     text-align: right;
-    
-  }
+    padding-right: 40px;
+}
 
   .linkStyle {
     color: #38AECC;
     text-decoration: none;
     margin: 5px;
+    padding-right: 20px;
+    font-size: 20px;
   }
 
     .logout-style {
@@ -23,3 +24,12 @@
       margin: 5px;
     }
 
+#logo{
+  position: absolute;
+  height: 80px;
+}
+
+#appName{
+  position: absolute;
+  padding-left: 80px;
+}

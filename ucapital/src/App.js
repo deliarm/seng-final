@@ -7,7 +7,7 @@ import Crypto from './pages/crypto'
 import Cookies from 'universal-cookie';
 import './App.css'
 import Home from '../src/pages/home'
-import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link, Outlet, useNavigate } from "react-router-dom";
 import { useState } from 'react'
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
       <div className="App">
         <BrowserRouter>
         <Routes>
-          <Route path="/"  element={<Header />}>
+          <Route path="/"  element={<Header setLoginUser={setLoginUser}/>}>
           <Route path="/" element={<Home user = {user} />} />
           <Route path="home" element={<Home user = {user} />} />
           <Route path="news" element={<News />} />
@@ -52,17 +52,20 @@ function App() {
   }
 }
 
-function Header() {
+function Header({setLoginUser}) {
+  const navigate = useNavigate()
   return (
     <div>
+      <img src="./UCapital-logo copy.png" id="logo"></img>
       <div className="header">
         {/* <Link to="/news">News</Link> */}
         {/* <Link to='news'></Link> */}
         <nav>
-          <Link to='news' className="linkStyle">News</Link>
           <Link to='home' className="linkStyle">Home</Link>
+          <Link to='news' className="linkStyle">News</Link>
           <Link to='stock' className="linkStyle">Stocks</Link>
           <Link to='crypto' className="linkStyle">Crypto</Link>
+          <button onClick={()=>{setLoginUser({}); navigate("/")}}>Logout</button>
         </nav>
       </div>
       <Outlet />
