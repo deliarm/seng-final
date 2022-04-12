@@ -1,6 +1,6 @@
 /* dynamic width, set style for closed news item */
 .item {
-    background-color: #191D32;
+    background-color:hsl(216, 50%, 16%);
     height: 300px;
     width: calc((100%-160px)/3 - 100px);
     min-width: 300px;
@@ -16,7 +16,7 @@
 
 /* set style for opened news item */
 .item--active {
-    background-color: #191D32;
+    background-color:hsl(216, 50%, 16%);
     color: #38AECC;
     position: fixed;
     width: 80% !important;

@@ -56,6 +56,7 @@ function Header({setLoginUser}) {
   const navigate = useNavigate()
   return (
     <div>
+      <img src="./UCapital-logo copy.png" id="logo"></img>
       <div className="header">
         {/* <Link to="/news">News</Link> */}
         {/* <Link to='news'></Link> */}

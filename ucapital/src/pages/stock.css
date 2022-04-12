@@ -1,5 +1,5 @@
 :root {
-    --main-bg: hsl(217, 54%, 11%);
+    --main-bg: #282F44;
     --card-bg: hsl(216, 50%, 16%);
     --line: hsl(215, 32%, 27%);
     --white: hsl(0, 0%, 100%);
@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color:  var(--main-bg);
+    background-color: #282F44;
 }
 
 #title{
