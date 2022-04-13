@@ -25,11 +25,26 @@
     }
 
 #logo{
-  position: absolute;
+  position: relative;
+  float: left;
   height: 80px;
 }
 
 #appName{
   position: absolute;
   padding-left: 80px;
+}
+
+.page-links{
+  padding-top: 25px;
+}
+
+@media(max-width: 45em) {
+  .header{
+    height: fit-content;
+    text-align: center;
+  }
+  .onTop{
+    position: relative;
+  }
 }
