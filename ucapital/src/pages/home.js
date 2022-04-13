@@ -1,4 +1,4 @@
-import ChatAppClient from "../components/chatApp/client/src/App"
+import ChatAppClient from "../components/chatApp/client/src/App2"
 import "./home.css"
 import { useState } from "react";
 import React from 'react'

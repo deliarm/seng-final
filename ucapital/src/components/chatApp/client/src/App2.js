@@ -1,11 +1,11 @@
-import './App.css';
+import './App2.css';
 import io from "socket.io-client";
 import { useState } from 'react';
 import Chat from "./Chat"
 
 const socket = io.connect("http://localhost:3001");
 
-function App({user}) {
+function App2({user}) {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("1");
   const [showChat, setShowChat] = useState(false);
@@ -18,7 +18,7 @@ function App({user}) {
   }
 
   return (
-    <div className="App">
+    <div className="App2">
       {!showChat ? (
         <div className = "joinChatContainer">
           <h3>Discussion Room</h3>
@@ -34,4 +34,4 @@ function App({user}) {
   );
 }
 
-export default App;
+export default App2;
