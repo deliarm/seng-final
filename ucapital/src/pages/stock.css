@@ -13,11 +13,14 @@ body{
     background-color: #282F44;
 }
 
+
+
 #title{
     font-size: 64px;
     font-family: "Arial", sans-serif;
     color: var(--text-blue);
-    text-align: center
+    text-align: center;
+    padding-left: 40%;
 }
 #mainContent{
     list-style: none;
@@ -73,6 +76,7 @@ button:hover{
 }
 
 #loadMore{ 
+    position: relative;
     width: 180px;
     height: 50px;
 } 
@@ -80,5 +84,6 @@ button:hover{
 #pageContainer:last-child{
     align-content: center;
     text-align: center;
+    left: 50%;
     padding-bottom: 15px;
 }
