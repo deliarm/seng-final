@@ -27,6 +27,7 @@ function App() {
     )
   }
   else {
+    // document.cookie = "BTC";
     return (
       <div className="App">
         <BrowserRouter>
