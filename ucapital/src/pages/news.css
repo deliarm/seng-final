@@ -11,8 +11,9 @@
   height: 100%;
   width: 160px;
   position: fixed;
+  margin-top: 10px;
   z-index: 1;
-  top: 0;
+  top: 60px;
   left: 0;
   background-color:hsl(216, 50%, 16%);
   overflow-x: hidden;
