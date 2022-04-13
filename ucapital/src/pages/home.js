@@ -6,7 +6,6 @@ import StockItem from "../components/stockItem";
 import CryptoItem from "../components/cryptoItem"
 import globalStocks from "../components/globalStocks";
 import globalCrypto from "../components/globalCrypto";
-import {Container } from "react-bootstrap";
 
 
 function Home({user}) {
@@ -18,6 +17,11 @@ function Home({user}) {
 
   return (
     <div id="pageContainer">
+      <div className="right">
+        {/* Chat application was taken and modified from: https://github.com/machadop1407/react-socketio-chat-app */}
+        <ChatAppClient user = {user}/>
+        {/* <h1>TEST</h1> */}
+      </div>
       <div className="left">
         <h1>Favorites</h1>
         <ul id="mainContent">
@@ -32,10 +36,6 @@ function Home({user}) {
                   }
                 })}
             </ul>
-      </div>
-      <div className="right">
-        {/* Chat application was taken and modified from: https://github.com/machadop1407/react-socketio-chat-app */}
-        <ChatAppClient user = {user}/>
       </div>
     </div>
   )

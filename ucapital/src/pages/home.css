@@ -8,7 +8,6 @@ body,html{
 }
 
 .left {
-  border: 2px solid blue;
   max-width: 60%;
 }
 
@@ -17,7 +16,17 @@ body,html{
 }
 
 .right {
-  border: 2px solid red;
-  max-width: 30%;
   align-items: center;
+  width: 31%;
+  padding-top: 20px;
+  height: 500px;
+}
+
+
+@media(max-width: 1000px){
+  #pageContainer{
+    display: block;
+    float: right;
+    width: 75%;
+  }
 }
