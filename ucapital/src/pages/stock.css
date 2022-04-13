@@ -48,7 +48,9 @@ input{
     color: var(--text-blue);
     border-radius: 6px;
 }
-
+#menu{
+    margin-left: 67%;
+}
 ::placeholder{
     color: var(--text-blue);
 }
