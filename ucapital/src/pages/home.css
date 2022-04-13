@@ -1,12 +1,15 @@
-.homepage {
-  margin: 0;
-  width: 100%;
-  display: 'flex';
+body,html{
+  background-color: #282F44;
+}
+
+#pageContainer{
+ display: flex;
+ flex-wrap: wrap;
 }
 
 .left {
-  float: left;
-  width: 30%;
+  border: 2px solid blue;
+  max-width: 60%;
 }
 
 .left h1 {
@@ -14,6 +17,7 @@
 }
 
 .right {
-  float: right;
-  width: 70%;
+  border: 2px solid red;
+  max-width: 30%;
+  align-items: center;
 }
