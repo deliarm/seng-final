@@ -32,7 +32,7 @@ function Chat({socket, username, room}) {
       <div className = "chat-body">
         <ScrollToBottom className = "message-container">
           {messageList.map((messageContent) => {
-            return <div className = "message" id = {username === messageContent.author ? "you" : "other"}>
+            return <div key={messageContent.message+(Math.random(1,100000)).toString()} className = "message" id = {username === messageContent.author ? "you" : "other"}>
                 <div>
                   <div className = "message-content">
                     <p>{messageContent.message}</p>
