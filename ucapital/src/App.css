@@ -5,6 +5,7 @@
     padding: 20px 10px;
     text-align: right;
     padding-right: 40px;
+    width: 100%;
 }
 
   .linkStyle {
@@ -25,11 +26,26 @@
     }
 
 #logo{
-  position: absolute;
+  position: relative;
+  float: left;
   height: 80px;
 }
 
 #appName{
   position: absolute;
   padding-left: 80px;
+}
+
+.page-links{
+  padding-top: 25px;
+}
+
+@media(max-width: 45em) {
+  .header{
+    height: fit-content;
+    text-align: center;
+  }
+  .onTop{
+    position: relative;
+  }
 }

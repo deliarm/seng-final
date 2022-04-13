@@ -56,16 +56,18 @@ function Header({setLoginUser}) {
   const navigate = useNavigate()
   return (
     <div>
-      <img src="./UCapital-logo copy.png" id="logo"></img>
       <div className="header">
         {/* <Link to="/news">News</Link> */}
         {/* <Link to='news'></Link> */}
         <nav>
+          <img className="onTop" src="./UCapital-logo copy.png" id="logo"></img>
+          <div className="page-links">
           <Link to='home' className="linkStyle">Home</Link>
           <Link to='news' className="linkStyle">News</Link>
           <Link to='stock' className="linkStyle">Stocks</Link>
           <Link to='crypto' className="linkStyle">Crypto</Link>
           <button onClick={()=>{setLoginUser({}); navigate("/")}}>Logout</button>
+          </div>
         </nav>
       </div>
       <Outlet />
