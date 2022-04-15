@@ -1,4 +1,4 @@
-# seng-final
+# UCapital
 Final project for Group 2 SENG 513: UCapital - An all in one stock and crypto application
 
 How to run the application:
